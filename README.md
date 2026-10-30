@@ -4,7 +4,7 @@
 - Antonio Fernández (C.I: 30.506.712)
 
 **Subproyecto:** Desarrollo de Aplicaciones I  
-**Profesor:** Alexo Barrios  
+**Profesor:** Rafael Barrios  
 
 ---
 
