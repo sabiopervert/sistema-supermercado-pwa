@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado PWA</title>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gestion para Supermercado (PWA)</h1>
+        <nav>
+            {% if user.is_authenticated%}
+                <span>Usuario: <strong> {{user.username}}</strong> ({{ user.get_role_display }})</span>  | 
+                <a href="{% url 'logout' %}">Cerrar Sesión</a>
+            {% else%}
+                <a href="{% url 'logout' %}">iniciar Sesión</a>
+            {% endif %}
+        </nav>
+    </header>
+    <hr>
+    <main>
+        {% block content %}{% endeblok %}
+    </main>
+</body>
+</html>

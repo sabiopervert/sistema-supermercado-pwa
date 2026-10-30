@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     <h2>Panel  de Control Principal</h2>
+
+     {% if user_role == 'ADMIN' %}
+         <div style="border: 2px solid green; padding: 15px; background-color: #e6ffe6;"> 
+             <h3>Vista de Administrador</h3>
+             <p>Acceso total al sistema, reportes globales, configuracion de cajas y Gestion de Usuario.</p>
+             <a href="/admin/">Ir al PAnel Administrativo de Django</a>
+          </div>
+
+     {% elif user_role == 'Gestor' %}
+         <div style="border: 2px solid blue; padding: 15px; background-color: #e6f2ff;"> 
+               <h3>Vista de Gestor de Inventario</h3>
+              <p>Modulo de actualizacion de stock, recepcion de mercancia y control de productos.</p>   
+         </div>
+
+     {% elif user_role == 'Usuario' %}
+         <div style="border: 2px solid orange; padding: 15px; background-color: #fff5e6;"> 
+             <h3>Vista de Cliente / Usuario Registrado</h3>
+             <p>Catalogo interactivo, carrito de compras y seguimiento de pedidos en linea.</p>
+        </div>
+
+     {% else %}
+         <div style="border: 2px solid gray; padding: 15px; background-color: #f2f2f2;"> 
+             <h3>Vista de Visitantes</h3>
+            <p>Bienvenido al Supermercado. Inicie sesion para realizarcompras o gestionar el sistema.</p> 
+        </div>
+     {% endif %}
+{% endeblok %}
